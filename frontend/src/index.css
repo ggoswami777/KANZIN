@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=TASA+Orbiter:wght@400..800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-stack: "Stack Sans Notch", sans-serif;
+  --font-tasa: "TASA Orbiter", sans-serif;
+}
+
+body {
+  font-family: var(--font-stack);
+}
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-softFloat {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
+.animate-softFloatDelay {
+  animation: softFloat 4s ease-in-out infinite;
+  animation-delay: 2s;
+}

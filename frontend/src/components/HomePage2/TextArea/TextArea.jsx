@@ -1,9 +1,19 @@
+import { motion } from "framer-motion";
 import React from "react";
+import { SlideLeft, SlideRight } from "../../../utility/Animation";
 
 const TextArea = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-10 px-6">
-      <div className="flex flex-col items-center justify-center mt-5 font-semibold text-center">
+      
+
+      <motion.div
+        variants={SlideRight(0.3)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }} // triggers when 30% in view
+        className="flex flex-col items-center justify-center mt-5 font-semibold text-center"
+      >
         <h1
           style={{ fontFamily: "var(--font-stack)" }}
           className="text-6xl text-white"
@@ -16,9 +26,15 @@ const TextArea = () => {
         >
           it's your foundation
         </h1>
-      </div>
+      </motion.div>
 
-      <div className="max-w-[65ch]  text-center leading-relaxed">
+      <motion.div
+        variants={SlideLeft(0.3)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="max-w-[65ch] text-center leading-relaxed"
+      >
         <p
           style={{ fontFamily: "var(--font-tasa)" }}
           className="text-[#d1d1d1] text-lg"
@@ -29,10 +45,17 @@ const TextArea = () => {
           Whether your goal is acing the JLPT, understanding anime without
           subtitles, or speaking with confidence—start here.
         </p>
-      </div>
-      <div className="text-[#EE7AC9]" >
+      </motion.div>
+
+      <motion.div
+        variants={SlideRight(0.4)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-[#EE7AC9] text-lg font-semibold tracking-wider"
+      >
         Strategic. Effective. Essential.
-      </div>
+      </motion.div>
     </div>
   );
 };

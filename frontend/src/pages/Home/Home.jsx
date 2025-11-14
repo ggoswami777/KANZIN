@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
 import TextArea from "../../components/HomePage2/TextArea/TextArea";
 import ExistsCard from "../../components/HomePage2/KanzinExistsCard/ExistsCard";
+import KanzinBetterSection from "../../components/HomePage2/KanzinBetterSection/KanzinBetterSection";
 
 const Home = () => {
   return (
@@ -27,11 +28,12 @@ const Home = () => {
         <Hero />
       </div>
       <div
-        className="h-[250vh] flex flex-col w-full items-center 
+        className="h-auto flex flex-col w-full items-center 
              bg-gradient-to-b from-[#000000] via-[#75363f] to-[#000000]"
       >
         <TextArea />
         <ExistsCard/>
+        <KanzinBetterSection/>
       </div>
     </div>
   );

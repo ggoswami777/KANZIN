@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <nav className="mx-auto w-[90%] flex justify-between items-center px-9 py-4 rounded-full backdrop-blur-sm bg-white/10 border border-white/10 shadow-lg">
+    <nav className="mx-auto w-[90%] flex justify-between items-center px-9 py-4 rounded-full backdrop-blur-[3px] bg-white/5 border border-white/10 shadow-lg">
       <motion.h1
         variants={SlideRight(0.3)}
         initial="hidden"

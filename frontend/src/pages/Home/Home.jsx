@@ -35,6 +35,7 @@ const Home = () => {
         <ExistsCard/>
         <KanzinBetterSection/>
       </div>
+      
     </div>
   );
 };

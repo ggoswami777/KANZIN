@@ -6,7 +6,9 @@ export const JapaneseCourseCards = [
     description:
       "Learn the essence of Japanese from the ground up—Hiragana, Katakana, pronunciation, sentence basics, and essential phrases to start speaking with confidence.",
     button: "Know More",
-    icon: "ri-book-open-line"
+    icon: "ri-book-open-line",
+    image:
+      "https://i.pinimg.com/1200x/8e/7f/89/8e7f8987a2508e2f9a854df1791b706c.jpg"
   },
 
   {
@@ -18,7 +20,9 @@ export const JapaneseCourseCards = [
     description:
       "Master the foundations of Japanese with basic grammar, daily expressions, and essential vocabulary required for JLPT N5.",
     button: "Explore N5",
-    icon: "ri-star-smile-line"
+    icon: "ri-star-smile-line",
+    image:
+      "https://i.pinimg.com/736x/4f/ae/83/4fae83b8c83afdfb4b21260608fe573f.jpg"
   },
 
   {
@@ -30,6 +34,8 @@ export const JapaneseCourseCards = [
     description:
       "Step into intermediate Japanese with deeper grammar, more complex sentences, and expanded vocabulary needed for JLPT N4.",
     button: "Explore N4",
-    icon: "ri-star-line"
+    icon: "ri-star-line",
+    image:
+      "https://i.pinimg.com/736x/13/79/0f/13790f85966562d8dadc27f380286f8c.jpg"
   }
 ];

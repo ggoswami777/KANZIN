@@ -5,6 +5,8 @@ import Hero from "../../components/Hero/Hero";
 import TextArea from "../../components/HomePage2/TextArea/TextArea";
 import ExistsCard from "../../components/HomePage2/KanzinExistsCard/ExistsCard";
 import KanzinBetterSection from "../../components/HomePage2/KanzinBetterSection/KanzinBetterSection";
+import SyllabusCards from "../../components/HomePage2/SyllabusCards/SyllabusCards";
+import ConnectWithUs from "../../components/HomePage2/ConnectWithUs/ConnectWithUs";
 
 const Home = () => {
   return (
@@ -15,10 +17,8 @@ const Home = () => {
         src={background}
       />
 
-      {/* Slight dark overlay for overall dimming */}
       <div className="absolute h-full w-full bg-black/40" />
 
-      {/* Bottom gradient overlay to make transition smooth */}
       <div
         className="absolute bottom-0 h-[40vh] w-full 
                    bg-gradient-to-b from-transparent to-black"
@@ -29,11 +29,13 @@ const Home = () => {
       </div>
       <div
         className="h-auto flex flex-col w-full items-center 
-             bg-gradient-to-b from-[#000000] via-[#75363f] to-[#000000]"
+             bg-gradient-to-b from-[#000000] via-[#52292f] to-[#000000]"
       >
         <TextArea />
         <ExistsCard/>
         <KanzinBetterSection/>
+        <SyllabusCards/>
+        <ConnectWithUs/>
       </div>
       
     </div>

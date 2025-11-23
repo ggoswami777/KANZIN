@@ -7,6 +7,7 @@ import ExistsCard from "../../components/HomePage2/KanzinExistsCard/ExistsCard";
 import KanzinBetterSection from "../../components/HomePage2/KanzinBetterSection/KanzinBetterSection";
 import SyllabusCards from "../../components/HomePage2/SyllabusCards/SyllabusCards";
 import ConnectWithUs from "../../components/HomePage2/ConnectWithUs/ConnectWithUs";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -36,7 +37,7 @@ const Home = () => {
         <KanzinBetterSection/>
         
         <SyllabusCards/>
-        <ConnectWithUs/>
+        <Footer/>
       </div>
       
     </div>

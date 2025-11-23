@@ -34,6 +34,7 @@ const Home = () => {
         <TextArea />
         <ExistsCard/>
         <KanzinBetterSection/>
+        
         <SyllabusCards/>
         <ConnectWithUs/>
       </div>

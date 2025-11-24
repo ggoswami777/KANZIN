@@ -4,13 +4,13 @@ import { Outlet } from 'react-router-dom'
 
 const Basics = () => {
   return (
-    <div className="h-screen w-screen bg-gradient-to-b from-black via-[#52292f] to-black flex">
+    <div className="h-screen w-screen bg-gradient-to-b from-black via-[#52292f] to-black flex overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 p-6 overflow-y-auto">
+      <div className="flex-1 py-2  overflow-y-auto">
         <Outlet />
       </div>
     </div>
   )
 }
 
-export default Basics
+export default  Basics

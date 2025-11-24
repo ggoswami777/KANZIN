@@ -22,7 +22,7 @@ const Sidebar = () => {
 
 
       <div>
-        <h2 className="text-[#EE7AC9] text-xl font-semibold drop-shadow-[0_0_8px_#EE7AC9]">
+        <h2 className="text-[#EE7AC9] text-xl font-semibold ">
           Basics
         </h2>
         <h3 className="text-white/40 text-sm mt-1">基礎を学ぼう</h3>
@@ -36,9 +36,9 @@ const Sidebar = () => {
             `p-3 rounded-xl transition flex items-center gap-3
               ${
                 isActive
-                  ? "text-[#EE7AC9] font-semibold bg-[#EE7AC9]/10 "
+                  ? "text-[#EE7AC9] shadow-[0_0_40px_rgba(238,122,201,0.25)] font-semibold bg-[#EE7AC9]/10 "
                   : "text-white/70 hover:bg-[#EE7AC9]/10 hover:text-[#EE7AC9]"
-              }`
+              } `
           }
         >
           <i className="ri-book-open-line text-xl"></i>
@@ -51,7 +51,7 @@ const Sidebar = () => {
             `p-3 rounded-xl transition flex items-center gap-3
               ${
                 isActive
-                  ? "text-[#EE7AC9] font-semibold bg-[#EE7AC9]/10 "
+                  ? "text-[#EE7AC9] shadow-[0_0_40px_rgba(238,122,201,0.25)] font-semibold bg-[#EE7AC9]/10 "
                   : "text-white/70 hover:bg-[#EE7AC9]/10 hover:text-[#EE7AC9]"
               }`
           }

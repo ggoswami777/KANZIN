@@ -1,10 +1,14 @@
 import React from "react";
 import { CardsData } from "./CardsData";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { SlideUp } from "../../../utility/Animation";
 
 const Cards = () => {
   return (
-    <div  className="flex flex-wrap justify-center gap-10   px-6 py-12">
+    <motion.div variants={SlideUp(0.2)}
+          initial="hidden"
+          animate="visible"  className="flex flex-wrap justify-center gap-10   px-6 py-12">
       {CardsData.map((card) => (
         <div
           key={card.id}
@@ -53,7 +57,7 @@ const Cards = () => {
             </p>
 
             <Link
-              to={`/start/${card.id === "intro" ? "basics" : card.id}`}
+              to={`/Kanzin/${card.id === "intro" ? "basics/introduction" : card.id}`}
               className="
                 mt-4 w-full text-center py-3 
                 rounded-xl text-white font-medium 
@@ -66,7 +70,7 @@ const Cards = () => {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

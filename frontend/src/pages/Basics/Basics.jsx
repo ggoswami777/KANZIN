@@ -6,7 +6,7 @@ const Basics = () => {
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-black via-[#52292f] to-black flex overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 py-2  overflow-y-auto">
+      <div className="flex-1   overflow-y-auto overflow-x-hidden">
         <Outlet />
       </div>
     </div>

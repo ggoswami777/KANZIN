@@ -8,7 +8,7 @@ const IntroductionBasics = () => {
   return (
     <>
      <motion.div
-      variants={SlideUp(0.3)}
+      variants={SlideLeft(0.3)}
       initial="hidden"
       animate="visible"
       className="overflow-x-hidden  "

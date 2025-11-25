@@ -7,7 +7,7 @@ const Heading = () => {
     <>
       <motion.div variants={SlideUp(0.3)}
             initial="hidden"
-            animate="visible"  className="text-xl text-white tracking-[0.2em] ">KANZIN</motion.div>
+            animate="visible"  className="text-xl p-2 text-white tracking-[0.2em] ">KANZIN</motion.div>
       <motion.div variants={SlideUp(0.3)}
             initial="hidden"
             animate="visible" className="w-full flex flex-col items-center gap-7 text-center justify-center pt-10 ">

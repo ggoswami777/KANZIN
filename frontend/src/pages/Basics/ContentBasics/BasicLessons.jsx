@@ -3,13 +3,13 @@ export const BasicsLessons = [
     lesson: 1,
     topic: "Hiragana",
     youtube: "https://youtu.be/6p9Il_j0zjc?si=lXdkg3-tahfRd5Nx",
-    pdf: "https://www.szfki.hu/~akiss/others/hiragana_table.pdf"
+    pdf: "https://cotohajime.net/wp-content/uploads/2020/09/Hiragana-and-Katakana-booklet.pdf"
   },
   {
     lesson: 2,
     topic: "Katakana",
     youtube: "https://youtu.be/s6DKRgtVLGA?si=FpjX6_CvwvULv3gY",
-    pdf: "https://www.szfki.hu/~akiss/others/katakana_table.pdf"
+    pdf: "https://cotohajime.net/wp-content/uploads/2020/09/Hiragana-and-Katakana-booklet.pdf"
   },
   {
     lesson: 3,

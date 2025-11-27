@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const Sidebar = () => {
-  const totalLessons = 50;
-  const completed = 40;
+const Sidebar = ({totalLessonsHaving,TotalcompletedLesson}) => {
+  const totalLessons = totalLessonsHaving;
+const completed = TotalcompletedLesson;
+
   const progress = (completed / totalLessons) * 100;
 
   return (

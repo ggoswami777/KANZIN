@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { BasicsLessons } from "./BasicLessons";
 import { Check } from "lucide-react";
 
-const Lessons = ({ onPlayVideo }) => {
-  const [completed, setCompleted] = useState([]);
+const Lessons = ({ onPlayVideo, completed, setCompleted  }) => {
 
+  
   const toggleComplete = (id) => {
     setCompleted((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]

@@ -6,8 +6,10 @@ import { SlideLeft, SlideUp } from "../../../utility/Animation";
 import Lessons from "./Lessons";
 import VideoPlay from "../../../components/VideoPlay/VideoPlay";
 import Footer from "../../../components/Footer/Footer";
+import { useOutletContext } from "react-router-dom";
 
 const ContentBasics = () => {
+  const { completed, setCompleted } = useOutletContext();
   const [playVideo, setPlayVideo] = useState(false);
   const [playVideoId, setPlayVideoId] = useState("");
 
@@ -60,13 +62,17 @@ const ContentBasics = () => {
             <KanaCharts titleJP="カタカナ" titleEN="Katakana" data={katakana} />
           </motion.div>
         </motion.div>
-        <Lessons onPlayVideo={handlePlayVideo} />
+        <Lessons
+          onPlayVideo={handlePlayVideo}
+          completed={completed}
+          setCompleted={setCompleted}
+        />
 
         {playVideo && (
           <VideoPlay data={playVideoId} close={() => setPlayVideo(false)} />
         )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

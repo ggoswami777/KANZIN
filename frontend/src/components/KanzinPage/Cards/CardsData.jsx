@@ -13,7 +13,7 @@ export const CardsData = [
     icon: "ri-book-open-line"
   },
   {
-    id: "n5",
+    id: "N5",
     title: "JLPT N5",
     jp: "日本語能力試験 N5",
     vocab: "700+ Words",
@@ -26,7 +26,7 @@ export const CardsData = [
     icon: "ri-star-smile-line"
   },
   {
-    id: "n4",
+    id: "N4",
     title: "JLPT N4",
     jp: "日本語能力試験 N4",
     vocab: "1,500+ Words",

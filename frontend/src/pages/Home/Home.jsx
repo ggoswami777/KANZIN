@@ -6,7 +6,7 @@ import TextArea from "../../components/HomePage2/TextArea/TextArea";
 import ExistsCard from "../../components/HomePage2/KanzinExistsCard/ExistsCard";
 import KanzinBetterSection from "../../components/HomePage2/KanzinBetterSection/KanzinBetterSection";
 import SyllabusCards from "../../components/HomePage2/SyllabusCards/SyllabusCards";
-import ConnectWithUs from "../../components/HomePage2/ConnectWithUs/ConnectWithUs";
+
 import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
     <div className="relative h-screen w-screen overflow-x-hidden ">
       {/* Background image */}
       <img
-        className="absolute h-full w-full object-cover bg-center"
+        className="absolute h-full w-full object-cover object-center  bg-center"
         src={background}
       />
 
@@ -29,17 +29,19 @@ const Home = () => {
         <Hero />
       </div>
       <div
-        className="h-auto flex flex-col w-full items-center 
+        className="h-auto flex flex-col w-full items-center  
              bg-gradient-to-b from-[#000000] via-[#52292f] to-[#000000]"
       >
         <TextArea />
-        <ExistsCard/>
-        <KanzinBetterSection/>
-        
-        <SyllabusCards/>
-        <Footer/>
+        <div className="px-2">
+          <ExistsCard />
+        </div>
+
+        <KanzinBetterSection />
+
+        <SyllabusCards />
+        <Footer />
       </div>
-      
     </div>
   );
 };

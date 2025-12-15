@@ -10,11 +10,19 @@ const StartButton = () => {
         variants={SlideUp(0.5)}
         initial="hidden"
         animate="visible"
-        className="flex cursor-pointer items-center gap-2 px-10 py-4 border border-white/70 rounded-xl text-white text-lg 
-                 font-medium bg-white/5 backdrop-blur-md hover:bg-white/10 hover:scale-105 
-                 transition-all duration-300 shadow-sm drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]"
+        className="
+          flex items-center gap-2
+          px-8 sm:px-8  mt-5 lg:mt-0 md:px-10
+          py-5 sm:py-4
+          border border-white/70 rounded-xl
+          text-white text-xl sm:text-lg
+          font-medium bg-white/5 backdrop-blur-md
+          hover:bg-white/10 hover:scale-105
+          transition-all duration-300
+          shadow-sm drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]
+        "
       >
-        <span className="text-2xl font-semibold">始</span>
+        <span className="text-xl sm:text-2xl font-semibold">始</span>
         <span>
           Start here <i className="ri-arrow-right-long-line ml-2"></i>
         </span>

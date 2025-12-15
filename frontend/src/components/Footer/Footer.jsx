@@ -2,10 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-white/10 bg-[#0c0c0f]">
-      <div className="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between">
-
- 
+    <footer className="w-full border-t mt-10 border-white/10 bg-[#0c0c0f]">
+      <div
+        className="
+          max-w-7xl mx-auto px-6 py-10
+          flex flex-col gap-6
+          md:flex-row md:items-center md:justify-between
+          text-center md:text-left
+        "
+      >
         <div>
           <h1 className="text-2xl font-semibold text-[#EE7AC9] tracking-wide">
             KANZIN
@@ -14,9 +19,8 @@ const Footer = () => {
             基礎から日本語を築き上げよう。
           </p>
         </div>
-       
-        
-        <div className="flex text-3xl gap-4 text-white">
+
+        <div className="flex justify-center md:justify-end text-3xl gap-4 text-white">
           <a
             href="https://www.linkedin.com/in/gaurav-goswami-4567a1364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             target="_blank"

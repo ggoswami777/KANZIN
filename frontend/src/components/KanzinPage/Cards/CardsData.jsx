@@ -13,7 +13,7 @@ export const CardsData = [
     icon: "ri-book-open-line"
   },
   {
-    id: "N5",
+    id: "N5/introduction",
     title: "JLPT N5",
     jp: "日本語能力試験 N5",
     vocab: "700+ Words",

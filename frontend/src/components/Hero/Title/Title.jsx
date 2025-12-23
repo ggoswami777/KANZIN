@@ -31,6 +31,15 @@ const Title = () => {
       >
         言葉を通して日本を感じよう。
       </p>
+      <p className="
+          text-2xl sm:text-xl md:text-2xl lg:text-3xl
+          font-bold text-white
+          drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]
+          hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)]
+          transition-all duration-700
+        ">
+          (EARLY RELEASE)
+        </p>
     </motion.h1>
   );
 };

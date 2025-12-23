@@ -26,7 +26,7 @@ export const CardsData = [
     icon: "ri-star-smile-line"
   },
   {
-    id: "N4",
+    id: "N4/introduction",
     title: "JLPT N4",
     jp: "日本語能力試験 N4",
     vocab: "1,500+ Words",

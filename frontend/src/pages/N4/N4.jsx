@@ -3,11 +3,13 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 import { Outlet } from "react-router-dom";
 import { N4VocabLessons } from "./ContentN4/N4VocabLessons";
+import { N4GrammarLessons } from "./ContentN4/N4GrammarLessons";
+import { N4KanjiLessons } from "./ContentN4/N4KanjiLessons";
 
 
-const N5 = () => {
+const N4 = () => {
   const totalLessons =
-    N4VocabLessons.length 
+    N4VocabLessons.length+ N4GrammarLessons.length+N4KanjiLessons.length
 
   const [completed, setCompleted] = useState([]);
 
@@ -41,4 +43,4 @@ const N5 = () => {
   );
 };
 
-export default N5;
+export default N4

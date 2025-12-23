@@ -1,6 +1,7 @@
 export const JapaneseCourseCards = [
   {
     id: "intro",
+    to:"/Kanzin/basics/introduction",
     title: "Introduction to Japanese",
     jp: "日本語イントロ",
     description:
@@ -13,6 +14,7 @@ export const JapaneseCourseCards = [
 
   {
     id: "n5",
+    to:"/Kanzin/N5/introduction",
     title: "JLPT N5",
     jp: "日本語能力試験 N5",
     vocab: "700+ Words",
@@ -27,6 +29,7 @@ export const JapaneseCourseCards = [
 
   {
     id: "n4",
+    to:"/Kanzin/N4/introduction",
     title: "JLPT N4",
     jp: "日本語能力試験 N4",
     vocab: "1,500+ Words",

@@ -1,5 +1,6 @@
 import React from "react";
 import { JapaneseCourseCards } from "./SyllabusCardsData";
+import { NavLink } from "react-router-dom";
 
 const SyllabusCards = () => {
   return (
@@ -67,7 +68,8 @@ const SyllabusCards = () => {
                   </p>
                 </div>
 
-                <button
+                <NavLink
+                to={data.to}
                   className="
                     mt-5 sm:mt-6
                     flex items-center justify-center gap-2
@@ -85,7 +87,7 @@ const SyllabusCards = () => {
                   <span className="text-lg sm:text-xl">
                     <i className={data.icon}></i>
                   </span>
-                </button>
+                </NavLink>
               </div>
             </div>
           );

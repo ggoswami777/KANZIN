@@ -11,7 +11,14 @@ const Sidebar = ({ totalLessonsHaving, TotalcompletedLesson }) => {
   const progress = (completed / totalLessons) * 100;
 
   return (
-    <div className="h-screen w-[18vw] flex flex-col gap-6 bg-[#0b090a] border-r border-[#3d1f27] px-5 py-6 rounded-xl relative">
+    <div className="hidden md:flex
+        h-screen w-[18vw]
+        flex-col gap-6
+        bg-[#0b090a]
+        border-r border-[#3d1f27]
+        px-5 py-6
+        rounded-xl
+        relative">
 
       <Link
         to="/Kanzin"

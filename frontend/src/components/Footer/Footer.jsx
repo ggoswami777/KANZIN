@@ -46,7 +46,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/its2la8e_/"
             target="_blank"
             className="hover:text-pink-500 transition-all"
           >

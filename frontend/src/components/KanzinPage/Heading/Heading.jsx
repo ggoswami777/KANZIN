@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { SlideUp } from "../../../utility/Animation";
+import { NavLink } from "react-router-dom";
 
 const Heading = () => {
   return (
@@ -17,7 +18,8 @@ const Heading = () => {
           text-center
         "
       >
-        KANZIN
+        <NavLink to="/">KANZIN</NavLink>
+       
       </motion.div>
 
       <motion.div

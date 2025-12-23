@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { Check } from "lucide-react";
 import { N5VocabLessons } from "./ContentN5Data";
-import Lessons from "../../Basics/ContentBasics/Lessons";
 
-const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
-
-  
+const N5Lessons = ({ lessons, data, onPlayVideo, completed, setCompleted }) => {
   const toggleComplete = (id) => {
     setCompleted((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
@@ -17,8 +13,10 @@ const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
     <div
       style={{ fontFamily: "var(--font-tasa)" }}
       className="
-        w-[90%] max-w-6xl mx-auto 
-        flex flex-col gap-8 px-12 py-10 
+        w-[95%] sm:w-[92%] max-w-6xl mx-auto
+        flex flex-col gap-6 sm:gap-8
+        px-4 sm:px-8 lg:px-12
+        py-6 sm:py-8 lg:py-10
         rounded-3xl
         bg-black/40 backdrop-blur-2xl
         border border-white/10
@@ -26,17 +24,19 @@ const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
         mb-10
       "
     >
-      <div className="flex justify-between px-4 py-2">
-        <h1 className="text-3xl font-semibold bg-gradient-to-r from-[#FF2BC2] via-[#D742F5] to-[#7E5CFF] bg-clip-text text-transparent">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-2 sm:px-4">
+        <h1 className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-[#FF2BC2] via-[#D742F5] to-[#7E5CFF] bg-clip-text text-transparent">
           {data}
         </h1>
 
-        <h1 className="text-2xl font-semibold text-white/40">
-          {completed.length}/{N5VocabLessons.length} completed
+        <h1 className="text-sm sm:text-xl font-semibold text-white/40">
+          {completed.length}/{lessons.length} completed
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Lessons Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {lessons.map((item) => {
           const isDone = completed.includes(item.lesson);
 
@@ -44,14 +44,15 @@ const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
             <div
               key={item.lesson}
               className="
-                relative flex flex-col gap-4 p-6
-                bg-black/10 border border-white/10 
+                relative flex flex-col gap-3 sm:gap-4 p-5 sm:p-6
+                bg-black/10 border border-white/10
                 rounded-2xl backdrop-blur-xl
                 shadow-[0_0_20px_rgba(0,0,0,0.5)]
                 hover:shadow-[0_0_30px_rgba(255,60,200,0.4)]
                 transition-all duration-300
               "
             >
+              {/* Complete Button */}
               <button
                 onClick={() => toggleComplete(item.lesson)}
                 className={`
@@ -65,31 +66,33 @@ const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
                 `}
               >
                 <Check
-                  size={20}
+                  size={18}
                   className={isDone ? "text-white" : "text-white/40"}
                 />
               </button>
 
-              <p className="text-lg text-white/60">Lesson {item.lesson}</p>
+              <p className="text-sm sm:text-base text-white/60">
+                Lesson {item.lesson}
+              </p>
 
-              <h1 className="text-xl font-semibold text-white">{item.topic}</h1>
+              <h1 className="text-lg sm:text-xl font-semibold text-white">
+                {item.topic}
+              </h1>
 
+              {/* Actions */}
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => onPlayVideo(item.youtube)}
                   className="
-                    flex-1 py-2 rounded-full 
-    bg-red-500/20 
-    text-white/80 text-center font-medium
-
-    transition duration-200
-    hover:bg-red-500/30 
-    hover:shadow-[0_0_7px_rgba(255,0,0,0.6),0_0_20px_rgba(255,0,0,0.5)]
-                   
-                    
+                    flex-1 py-2 rounded-full
+                    bg-red-500/20
+                    text-white/80 text-sm sm:text-base font-medium
+                    transition duration-200
+                    hover:bg-red-500/30
+                    hover:shadow-[0_0_7px_rgba(255,0,0,0.6),0_0_20px_rgba(255,0,0,0.5)]
                   "
                 >
-                  <i class="ri-video-line"></i> Video
+                  <i className="ri-video-line"></i> Video
                 </button>
 
                 {item.pdf ? (
@@ -97,21 +100,20 @@ const N5Lessons = ({lessons ,data, onPlayVideo, completed, setCompleted  }) => {
                     href={item.pdf}
                     target="_blank"
                     className="
-                      flex-1  py-2 rounded-full 
+                      flex-1 py-2 rounded-full
                       bg-[#FF2BC2]/20
-                      text-[#FF2BC2]/60 text-center font-medium
-                      
+                      text-[#FF2BC2]/70 text-sm sm:text-base text-center font-medium
                       transition-all
                     "
                   >
-                    <i class="ri-file-pdf-line"></i> PDF
+                    <i className="ri-file-pdf-line"></i> PDF
                   </a>
                 ) : (
                   <div
                     className="
-                      flex-1 py-2 rounded-full 
-                      bg-white/10 
-                      text-white/20 text-center font-medium
+                      flex-1 py-2 rounded-full
+                      bg-white/10
+                      text-white/20 text-sm sm:text-base text-center font-medium
                     "
                   >
                     PDF

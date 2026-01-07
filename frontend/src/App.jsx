@@ -12,6 +12,7 @@ import ContentN5 from "./pages/N5/ContentN5/ContentN5";
 import N4 from "./pages/N4/N4";
 import IntroductionN4 from "./pages/N4/IntroductionN4/IntroductionN4";
 import ContentN4 from "./pages/N4/ContentN4/ContentN4";
+import Login from "./pages/Login/Login";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="introduction" element={<IntroductionN4 />} />
         <Route path="content" element={<ContentN4/>} />
       </Route>
+      <Route path="/login" element={<Login/>}/>
     </Routes>
   );
 }

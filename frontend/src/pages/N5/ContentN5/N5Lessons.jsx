@@ -2,7 +2,7 @@ import React from "react";
 import { Check } from "lucide-react";
 import { N5VocabLessons } from "./ContentN5Data";
 
-const N5Lessons = ({ lessons, data, onPlayVideo, completed, setCompleted }) => {
+const N5Lessons = ({id, lessons, data, onPlayVideo, completed, setCompleted }) => {
   const toggleComplete = (id) => {
     setCompleted((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
@@ -11,6 +11,7 @@ const N5Lessons = ({ lessons, data, onPlayVideo, completed, setCompleted }) => {
 
   return (
     <div
+      id={id}
       style={{ fontFamily: "var(--font-tasa)" }}
       className="
         w-[95%] sm:w-[92%] max-w-6xl mx-auto

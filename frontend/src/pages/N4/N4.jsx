@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { N4VocabLessons } from "./ContentN4/N4VocabLessons";
 import { N4GrammarLessons } from "./ContentN4/N4GrammarLessons";
 import { N4KanjiLessons } from "./ContentN4/N4KanjiLessons";
-
+import Menubar from "../../components/menubar/Menubar";
 
 const N4 = () => {
   const totalLessons =
-    N4VocabLessons.length+ N4GrammarLessons.length+N4KanjiLessons.length
+    N4VocabLessons.length + N4GrammarLessons.length + N4KanjiLessons.length;
 
   const [completed, setCompleted] = useState([]);
-
+  const location = useLocation();
+  const isContentPage = location.pathname.includes("/content");
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-black via-[#52292f] to-black flex overflow-hidden">
-      
       {/* Sidebar – Desktop only */}
       <div className="hidden md:block">
         <Sidebar
@@ -26,21 +26,17 @@ const N4 = () => {
 
       {/* Main Area */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        
         {/* Topbar – Mobile only */}
-        <Topbar
-          completed={completed.length}
-          total={totalLessons}
-        />
+        <Topbar completed={completed.length} total={totalLessons} />
 
         {/* Page Content */}
         <div className="flex-1 overflow-y-auto overflow-x-hidden">
           <Outlet context={{ completed, setCompleted }} />
+          {isContentPage && <Menubar />}
         </div>
-
       </div>
     </div>
   );
 };
 
-export default N4
+export default N4;

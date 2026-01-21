@@ -61,6 +61,7 @@ const ContentN5 = () => {
 
         {/* Lessons */}
         <N5Lessons
+          id="vocabulary"
           lessons={N5VocabLessons}
           data="Vocabulary N5"
           onPlayVideo={handlePlayVideo}
@@ -69,6 +70,7 @@ const ContentN5 = () => {
         />
 
         <N5Lessons
+          id="grammar"
           lessons={N5GrammarLessons}
           data="Grammar N5"
           onPlayVideo={handlePlayVideo}
@@ -76,6 +78,7 @@ const ContentN5 = () => {
           setCompleted={setCompleted}
         />
         <N5Lessons
+           id="kanji"
           lessons={N5Kanji}
           data="Kanjis N5"
           onPlayVideo={handlePlayVideo}

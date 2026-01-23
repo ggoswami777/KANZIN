@@ -7,9 +7,10 @@ const createToken=(id)=>{
     return jwt.sign({id},process.env.JWT_SECRET) 
 }
 const registeredUser=async (req,res)=>{
+    
     try {
         const{name,email,password}=req.body;
-        const exists=await userModel.findOne((email));
+        const exists=await userModel.findOne({email});
         if(exists){
             return res.json({success:false ,message:"User already exists"})
         }
@@ -35,5 +36,8 @@ const registeredUser=async (req,res)=>{
         res.json({success:false,message:error.message})
     }
 }
+const loginUser=async(req,res)=>{
 
-export {registeredUser}
+}
+
+export {registeredUser,loginUser}

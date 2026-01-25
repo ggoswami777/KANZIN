@@ -1,24 +1,25 @@
 import userModel from "../models/userModel.js";
 
-const lessonController = async (req, res) => {
+/**
+ * TOGGLE lesson completion
+ * POST /api/lesson/complete
+ */
+export const toggleLessonCompletion = async (req, res) => {
   try {
-    const { userId, lessonId } = req.body;
+    const { lessonId } = req.body;
+    const userId = req.userId;
 
     const user = await userModel.findById(userId);
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found" });
     }
 
-    const isCompleted = user.completedLessons.includes(lessonId);
+    const index = user.completedLessons.indexOf(lessonId);
 
-    if (isCompleted) {
-     
-      user.completedLessons = user.completedLessons.filter(
-        (id) => id !== lessonId
-      );
-    } else {
-   
+    if (index === -1) {
       user.completedLessons.push(lessonId);
+    } else {
+      user.completedLessons.splice(index, 1);
     }
 
     await user.save();
@@ -26,13 +27,33 @@ const lessonController = async (req, res) => {
     res.json({
       success: true,
       completedLessons: user.completedLessons,
-      message: isCompleted
-        ? "Lesson removed from completed"
-        : "Lesson marked as completed",
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-export default lessonController;
+/**
+ * GET completed lessons
+ * GET /api/lesson/completed
+ */
+export const getCompletedLessons = async (req, res) => {
+  try {
+    const userId = req.userId;
+
+    const user = await userModel
+      .findById(userId)
+      .select("completedLessons");
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    res.json({
+      success: true,
+      completedLessons: user.completedLessons,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

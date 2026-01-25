@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
+import axios from "axios";
 import { Check } from "lucide-react";
-import { N5VocabLessons } from "./ContentN5Data";
 
-const N5Lessons = ({id, lessons, data, onPlayVideo, completed, setCompleted }) => {
-  const toggleComplete = (id) => {
-    setCompleted((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
+import { ShopContext } from "../../../context/ShopContext";
+
+
+const N5Lessons = ({
+  id,
+  lessons,
+  data,
+  onPlayVideo,
+  completed,
+  setCompleted,
+}) => {
+  const { backendURL, token } = useContext(ShopContext);
+
+
+  const toggleComplete = async (lessonId) => {
+    try {
+      await axios.post(
+        `${backendURL}/api/lesson/complete`,
+        {
+          lessonId,
+        },
+        {
+          headers: {
+           Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setCompleted((prev) =>
+        prev.includes(lessonId)
+          ? prev.filter((x) => x !== lessonId)
+          : [...prev, lessonId]
+      );
+    } catch (error) {
+      console.error("Error updating lesson status", error);
+    }
   };
 
   return (
@@ -32,18 +63,18 @@ const N5Lessons = ({id, lessons, data, onPlayVideo, completed, setCompleted }) =
         </h1>
 
         <h1 className="text-sm sm:text-xl font-semibold text-white/40">
-          {completed.length}/{lessons.length} completed
+          {lessons.length} Lessons
         </h1>
       </div>
 
       {/* Lessons Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {lessons.map((item) => {
-          const isDone = completed.includes(item.lesson);
+          const isDone = completed.includes(item.lessonId);
 
           return (
             <div
-              key={item.lesson}
+              key={item.lessonId}
               className="
                 relative flex flex-col gap-3 sm:gap-4 p-5 sm:p-6
                 bg-black/10 border border-white/10
@@ -55,7 +86,7 @@ const N5Lessons = ({id, lessons, data, onPlayVideo, completed, setCompleted }) =
             >
               {/* Complete Button */}
               <button
-                onClick={() => toggleComplete(item.lesson)}
+                onClick={() => toggleComplete(item.lessonId)}
                 className={`
                   absolute top-4 right-4 w-8 h-8 rounded-full
                   border transition-all flex items-center justify-center

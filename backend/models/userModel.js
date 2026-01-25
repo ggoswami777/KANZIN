@@ -18,36 +18,9 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
-    progress: {
-      N5: {
-        vocab: {
-          type: [String], 
-          default: [],
-        },
-        grammar: {
-          type: [String],
-          default: [],
-        },
-        kanji: {
-          type: [String],
-          default: [],
-        },
-      },
-
-      N4: {
-        vocab: {
-          type: [String],
-          default: [],
-        },
-        grammar: {
-          type: [String],
-          default: [],
-        },
-        kanji: {
-          type: [String],
-          default: [],
-        },
-      },
+    completedLessons: {
+      type: [String], // store lesson IDs
+      default: [],
     },
   },
   { minimize: false, timestamps: true }

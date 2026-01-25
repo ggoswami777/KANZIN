@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import background from "../../assets/background/bg.jpg";
+import { useContext } from "react";
+import { ShopContext } from "../../context/shopContext.js";
 const Login = () => {
   const [currentState, setCurrentState] = useState("Sign Up");
+  const {token,setToken,navigate,backendURL}=useContext(ShopContext);
+  
   const onSubmitHandler = async (event) => {
     event.preventDefault();
   };

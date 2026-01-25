@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import React from "react";
 import { SlideUp } from "../../../utility/Animation";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ShopContext } from "../../../context/ShopContext";
 
 const StartButton = () => {
+  const {token}=useContext(ShopContext);
   return (
-    <Link to="/Kanzin">
+    <Link to={token?'/kanzin':'/login'}>
       <motion.button
         variants={SlideUp(0.5)}
         initial="hidden"

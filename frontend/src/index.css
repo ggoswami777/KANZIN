@@ -47,6 +47,27 @@ body {
   background: linear-gradient(180deg, #b300ff, #e36aff);
   box-shadow: 0 0 20px rgba(227, 106, 255, 0.9);
 }
+:root {
+  /* The core colors */
+  --toastify-color-dark: #000000;          /* Deep Black */
+  --toastify-text-color-dark: #fff;       /* White text */
+  
+  /* The Neon Pink Accent */
+  --toastify-color-progress-dark: #ff00ff; /* Neon Pink Progress Bar */
+  --toastify-icon-color-info: #ff00ff;
+  --toastify-icon-color-success: #ff00ff;
+}
 
+/* Add the Neon Glow to the toast box */
+.Toastify__toast--dark {
+  background-color: #000000 !important;
+  border: 1px solid #ff00ff;             /* Pink border */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3); /* Subtle pink glow */
+  font-family: 'Inter', sans-serif;       /* Or your UI font */
+}
 
-
+/* Customize the progress bar glow */
+.Toastify__progress-bar--dark {
+  background: linear-gradient(to right, #ff00ff, #ff77ff);
+  box-shadow: 0 0 10px #ff00ff;
+}

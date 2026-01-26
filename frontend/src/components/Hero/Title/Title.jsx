@@ -38,7 +38,7 @@ const Title = () => {
           hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)]
           transition-all duration-700
         ">
-          (EARLY RELEASE)
+          はじめまして(Nice to meet you)
         </p>
     </motion.h1>
   );

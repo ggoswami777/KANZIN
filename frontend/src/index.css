@@ -27,6 +27,7 @@ body {
   animation-delay: 2s;
 }
 ::-webkit-scrollbar {
+  display: none;
   width: 10px;
 }
 

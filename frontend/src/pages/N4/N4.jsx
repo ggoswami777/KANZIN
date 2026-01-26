@@ -15,13 +15,16 @@ const N4 = () => {
     N4GrammarLessons.length +
     N4KanjiLessons.length;
 
-  const [completed, setCompleted] = useState([]);
-  const { backendURL, token } = useContext(ShopContext);
+  const level = "N4";
 
+  const [completed, setCompleted] = useState([]);
+  const [N4Completed, setN4Completed] = useState([]);
+
+  const { backendURL, token } = useContext(ShopContext);
   const location = useLocation();
   const isContentPage = location.pathname.includes("/content");
 
-  // ✅ Fetch completed lessons on load / refresh
+  // ✅ 1. Fetch ALL completed lessons
   useEffect(() => {
     const fetchCompletedLessons = async () => {
       try {
@@ -45,6 +48,15 @@ const N4 = () => {
     if (token) fetchCompletedLessons();
   }, [token, backendURL]);
 
+  // ✅ 2. Derive N4 completed whenever completed changes
+useEffect(() => {
+  const filtered = completed.filter(
+    (lessonId) => lessonId.includes("N4")
+  );
+  setN4Completed(filtered);
+}, [completed]);
+
+
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-black via-[#52292f] to-black flex overflow-hidden">
       
@@ -52,7 +64,7 @@ const N4 = () => {
       <div className="hidden md:block">
         <Sidebar
           totalLessonsHaving={totalLessons}
-          TotalcompletedLesson={completed.length}
+          TotalcompletedLesson={N4Completed.length}
         />
       </div>
 
@@ -60,7 +72,10 @@ const N4 = () => {
       <div className="flex-1 flex flex-col overflow-hidden">
 
         {/* Topbar – Mobile only */}
-        <Topbar completed={completed.length} total={totalLessons} />
+        <Topbar
+          completed={N4Completed.length}
+          total={totalLessons}
+        />
 
         {/* Page Content */}
         <div className="flex-1 overflow-y-auto overflow-x-hidden">

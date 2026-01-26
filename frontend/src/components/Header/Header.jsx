@@ -83,21 +83,14 @@ const Header = () => {
             <>
               <button
                 onClick={() => navigate("/login")}
-                className="text-white/80 hover:text-[#f35faf] transition"
+                className=" bg-[#f35faf]/80 hover:bg-[#d64694]
+                    text-white px-6 py-2 rounded-full
+                    transition shadow-[0_0_10px_rgba(243,95,175,0.3)]"
               >
                 Login
               </button>
 
-              <button
-                onClick={() => navigate("/register")}
-                className="
-                  bg-[#f35faf]/80 hover:bg-[#d64694]
-                  text-white px-6 py-2 rounded-full
-                  transition shadow-[0_0_10px_rgba(243,95,175,0.3)]
-                "
-              >
-                Register
-              </button>
+             
             </>
           )}
         </motion.div>
@@ -142,24 +135,14 @@ const Header = () => {
                     setOpen(false);
                     navigate("/login");
                   }}
-                  className="text-white/80 hover:text-[#f35faf] transition"
+                  className=" bg-[#f35faf]/80 hover:bg-[#d64694]
+                    text-white px-6 py-2 rounded-full
+                    transition shadow-[0_0_10px_rgba(243,95,175,0.3)]"
                 >
                   Login
                 </button>
 
-                <button
-                  onClick={() => {
-                    setOpen(false);
-                    navigate("/register");
-                  }}
-                  className="
-                    bg-[#f35faf]/80 hover:bg-[#d64694]
-                    text-white px-6 py-2 rounded-full
-                    transition shadow-[0_0_10px_rgba(243,95,175,0.3)]
-                  "
-                >
-                  Register
-                </button>
+ 
               </>
             )}
           </motion.div>

@@ -65,8 +65,8 @@ const Sidebar = ({ totalLessonsHaving, TotalcompletedLesson }) => {
         </NavLink>
       </div>
 
-     
-      <div className="absolute bottom-4 left-0 right-0 px-5 border border-t-white/40 py-8">
+     {
+      page==="basics"?"":<div className="absolute bottom-4 left-0 right-0 px-5 border border-t-white/40 py-8">
         <p className="text-[14px] text-white/60 mb-1">Progress</p>
 
         <div className="flex justify-between text-xs text-white/40">
@@ -81,6 +81,8 @@ const Sidebar = ({ totalLessonsHaving, TotalcompletedLesson }) => {
           ></div>
         </div>
       </div>
+     }
+      
     </div>
   );
 };

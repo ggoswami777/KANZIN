@@ -83,40 +83,13 @@ git clone https://github.com/ggoswami777/KANZIN.git
 cd KANZIN
 ```
 
-### 3. Backend Setup
-1. Navigate to the backend directory:
+### 3. Setup and Run
+1. Install all dependencies (Root, Frontend, Backend):
    ```bash
-   cd backend
+   npm run install-all
    ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file and add your credentials:
-   ```env
-   DB_URL=your_mongodb_uri
-   PORT=3001
-   JWT_SECRET=your_secret_key
-   ```
-4. Start the server:
-   ```bash
-   npm run server
-   ```
-
-### 4. Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd ../frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file:
-   ```env
-   VITE_BACKEND_URL=http://localhost:3001
-   ```
-4. Start the development server:
+2. Configure environment variables in both `frontend/.env` and `backend/.env` as described in their respective folders.
+3. Start both Frontend and Backend concurrently:
    ```bash
    npm run dev
    ```

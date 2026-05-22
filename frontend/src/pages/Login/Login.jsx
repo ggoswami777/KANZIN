@@ -12,8 +12,10 @@ const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     try {
       if (currentState === "Sign Up") {
@@ -44,8 +46,9 @@ const Login = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.message)
+    } finally {
+      setLoading(false);
     }
-  
   };
   useEffect(()=>{
     if(token){
@@ -120,10 +123,18 @@ const Login = () => {
           )}
         </div>
         <button
+          disabled={loading}
           className="bg-gradient-to-r from-pink-500 to-purple-600
-                hover:opacity-90 transition-all duration-300 text-white font-light px-14 py-3 mt-4 rounded-full"
+                hover:opacity-90 transition-all duration-300 text-white font-light px-14 py-3 mt-4 rounded-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
-          {currentState === "Login" ? "Sign In" : "Sign Up"}
+          {loading ? (
+            <>
+              <span className="inline-block animate-spin">⏳</span>
+              Loading...
+            </>
+          ) : (
+            currentState === "Login" ? "Sign In" : "Sign Up"
+          )}
         </button>
       </form>
     </div>

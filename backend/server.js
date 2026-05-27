@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import connectDB from './config/mongodb.js'
 import userRouter from './routes/userRoute.js'
 import lessonRouter from './routes/lessonRoute.js'
+import requireAuthExcept from './middleware/requireAuthExcept.js'
 
 dotenv.config({quiet:true});
 const app=express();
@@ -12,6 +13,9 @@ const port=process.env.PORT || 4000;
 connectDB();
 app.use(express.json());
 app.use(cors());
+
+
+app.use(requireAuthExcept);
 
 app.get("/",(req,res)=>{
     res.json({success:true,message:"API WORKING"})

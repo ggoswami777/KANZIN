@@ -13,21 +13,22 @@ import N4 from "./pages/N4/N4";
 import IntroductionN4 from "./pages/N4/IntroductionN4/IntroductionN4";
 import ContentN4 from "./pages/N4/ContentN4/ContentN4";
 import Login from "./pages/Login/Login";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Kanzin" element={<Kanzin />} />
-      <Route path="/Kanzin/basics" element={<Basics />}>
+      <Route path="/Kanzin" element={<ProtectedRoute><Kanzin /></ProtectedRoute>} />
+      <Route path="/Kanzin/basics" element={<ProtectedRoute><Basics /></ProtectedRoute>}>
         <Route path="introduction" element={<IntroductionBasics />} />
         <Route path="content" element={<ContentBasics />} />
       </Route>
-      <Route path="/Kanzin/N5" element={<N5/>}>
+      <Route path="/Kanzin/N5" element={<ProtectedRoute><N5/></ProtectedRoute>}>
         <Route path="introduction" element={<IntroductionN5 />} />
         <Route path="content" element={<ContentN5/>} />
       </Route>
-      <Route path="/Kanzin/N4" element={<N4/>}>
+      <Route path="/Kanzin/N4" element={<ProtectedRoute><N4/></ProtectedRoute>}>
         <Route path="introduction" element={<IntroductionN4 />} />
         <Route path="content" element={<ContentN4/>} />
       </Route>
